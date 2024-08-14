@@ -7,7 +7,17 @@
   {{csrfField()}}
   @!input({ name: 'email', label:'Email', type:'email' })
   @!input({ name: 'password', label:'Password', type:'password' })
-  <button type="submit" class="btn btn-outline-info mt-2">{{title}}</button>
+  <div class="d-flex justify-content-between align-items-center mt-2">
+    <button type="submit" class="btn btn-outline-info">{{title}}</button>
+    <a href="{{route('auth.forgot-password')}}"
+      class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+      Mot de passe oublié
+    </a>
+  </div>
 </form>
+
+<div class="w-50 mx-auto mt-2">
+  <a href="{{route('github.redirect')}}" class="btn btn-outline-info d-block mx-auto">Se connecter avec Github</a>
+</div>
 
 @include('partials/footer')
