@@ -59,6 +59,7 @@
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^3.0.0",
     "@vinejs/vine": "^2.1.0",
+    "auth": "^1.1.1",
     "better-sqlite3": "^11.1.2",
     "bootstrap": "^5.3.3",
     "edge.js": "^6.0.2",
