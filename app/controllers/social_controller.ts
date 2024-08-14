@@ -12,17 +12,17 @@ export default class SocialController {
     const gh = ally.use('github')
 
     if (gh.accessDenied()) {
-      session.flash('success', "Tu as annulé l'autorisation d'accès.")
+      session.flash('error', "Vous avez annulé l'autorisation d'accès.")
       return response.redirect().toRoute('auth.login')
     }
 
     if (gh.stateMisMatch()) {
-      session.flash('success', "Erreur lors de l'autorisation.")
+      session.flash('error', "Erreur lors de l'autorisation.")
       return response.redirect().toRoute('auth.login')
     }
 
     if (gh.hasError()) {
-      session.flash('success', "Erreur lors de l'autorisation.")
+      session.flash('error', "Erreur lors de l'autorisation.")
       return response.redirect().toRoute('auth.login')
     }
 

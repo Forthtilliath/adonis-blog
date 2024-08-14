@@ -29,6 +29,13 @@ router
       .as('auth.forgot-password')
     router.post('/forgot-password', [ResetPasswordController, 'handleForgotPassword'])
 
+    router
+      .get('/reset-password', [ResetPasswordController, 'resetPassword'])
+      .as('auth.reset-password')
+    router
+      .post('/reset-password', [ResetPasswordController, 'handleResetPassword'])
+      .as('auth.handle-reset-password')
+
     router.get('/github/redirect', [SocialController, 'githubRedirect']).as('github.redirect')
     router.get('/github/callback', [SocialController, 'githubCallback']).as('github.callback')
   })
