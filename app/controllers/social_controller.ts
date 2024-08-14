@@ -27,7 +27,6 @@ export default class SocialController {
     }
 
     const ghUser = await gh.user()
-    console.log(ghUser)
     const user = await User.findBy('email', ghUser.email)
 
     if (!user) {

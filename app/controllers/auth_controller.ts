@@ -21,7 +21,7 @@ export default class AuthController {
       await thumbnail.move(app.makePath('public/users'), { name: `${cuid()}.${thumbnail.extname}` })
     }
 
-    const filePath = `users/${thumbnail?.fileName || `${username}.png`}`
+    const filePath = `/users/${thumbnail?.fileName || `${username}.png`}`
     await User.create({ email, username, password, thumbnail: filePath })
 
     session.flash('success', 'Inscription Ok!!')

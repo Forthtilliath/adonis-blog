@@ -13,6 +13,7 @@
       @if(auth.use('web').isAuthenticated)
         <div class="d-flex gap-3 align-items-center">
           @!userBadge({ username: auth.use('web').user.username, thumbnail: auth.use('web').user.thumbnail})
+        <a href="{{route('post.create')}}" class="btn btn-outline-info">Publier ?</a>
           <form action="{{route('auth.logout')}}?_method=DELETE" method="post">
             {{csrfField()}}
             <button class="btn btn-outline-warning" type="submit">Déconnexion</button>
