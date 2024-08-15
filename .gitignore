@@ -11,6 +11,8 @@ tmp
 
 # Frontend assets compiled code
 public/assets
+public/users
+public/posts
 
 # Build tools specific
 npm-debug.log
