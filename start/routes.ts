@@ -17,6 +17,12 @@ const AuthController = () => import('#controllers/auth_controller')
 
 router.get('/', [PostController, 'index']).as('home')
 
+router
+  .get('/post/:slug/:id', [PostController, 'show'])
+  .as('post.show')
+  .where('id', router.matchers.uuid())
+  .where('slug', router.matchers.slug())
+
 // Routes for guests
 router
   .group(() => {
@@ -53,12 +59,18 @@ router
       .group(() => {
         router.get('/create', [PostController, 'create']).as('post.create')
         router.post('/create', [PostController, 'store'])
-
         router
-          .get('/:slug/:id', [PostController, 'show'])
-          .as('post.show')
+          .get('/:id/edit', [PostController, 'edit'])
+          .as('post.edit')
           .where('id', router.matchers.uuid())
-          .where('slug', router.matchers.slug())
+        router
+          .put('/:id/edit', [PostController, 'update'])
+          .as('post.update')
+          .where('id', router.matchers.uuid())
+        router
+          .delete('/:id/delete', [PostController, 'destroy'])
+          .as('post.delete')
+          .where('id', router.matchers.uuid())
       })
       .prefix('/post')
   })

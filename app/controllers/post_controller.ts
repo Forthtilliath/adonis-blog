@@ -1,12 +1,13 @@
 import Post from '#models/post'
 import FileUploaderService from '#services/file_uploader_service'
-import { storePostValidator } from '#validators/post'
+import { storePostValidator, updatePostValidator } from '#validators/post'
 import { inject } from '@adonisjs/core'
 import stringHelpers from '@adonisjs/core/helpers/string'
 import type { HttpContext } from '@adonisjs/core/http'
 import { Marked } from 'marked'
-import { markedHighlight, markedHighlihter } from 'marked-highlight'
+import { markedHighlight } from 'marked-highlight'
 import hljs from 'highlight.js'
+import { unlink } from 'node:fs/promises'
 
 @inject()
 export default class PostController {
@@ -38,7 +39,7 @@ export default class PostController {
   async store({ request, auth, session, response }: HttpContext) {
     const { title, content, thumbnail } = await request.validateUsing(storePostValidator)
 
-    const slug = stringHelpers.slug(title).toLocaleLowerCase()
+    const slug = stringHelpers.slug(title, { lower: true })
     const filePath = await this.fileUploaderService.upload(thumbnail, slug, 'posts')
 
     await Post.create({ title, slug, content, thumbnail: filePath, userId: auth.user!.id })
@@ -59,7 +60,7 @@ export default class PostController {
     const marked = new Marked(
       markedHighlight({
         langPrefix: 'hljs language-',
-        highlight(code, lang, info) {
+        highlight(code, lang) {
           const language = hljs.getLanguage(lang) ? lang : 'plaintext'
           return hljs.highlight(code, { language }).value
         },
@@ -73,15 +74,43 @@ export default class PostController {
   /**
    * Edit individual record
    */
-  async edit({ params }: HttpContext) {}
+  async edit({ params: { id }, view }: HttpContext) {
+    const post = await Post.findOrFail(id)
+    return view.render('pages/post/edit', { post })
+  }
 
   /**
    * Handle form submission for the edit action
    */
-  async update({ params, request }: HttpContext) {}
+  async update({ params: { id }, request, session, response }: HttpContext) {
+    const { title, content, thumbnail } = await request.validateUsing(updatePostValidator)
+    const post = await Post.findOrFail(id)
+    if (post.title !== title) {
+      post.merge({ title, slug: stringHelpers.slug(title, { lower: true }) })
+    }
+    if (thumbnail) {
+      await unlink(`public/${post.thumbnail}`)
+      const filePath = await this.fileUploaderService.upload(thumbnail, '', 'posts')
+      post.merge({ thumbnail: filePath })
+    }
+    if (post.content !== content) {
+      post.merge({ content })
+    }
+    await post.save()
+
+    session.flash('success', 'Votre article a bien été mis à jour')
+    return response.redirect().toRoute('post.show', { slug: post.slug, id: post.id })
+  }
 
   /**
    * Delete record
    */
-  async destroy({ params }: HttpContext) {}
+  async destroy({ params: { id }, session, response }: HttpContext) {
+    const post = await Post.findOrFail(id)
+    await unlink(`public/${post.thumbnail}`)
+    await post.delete()
+
+    session.flash('success', 'Votre article a bien été supprimé!')
+    return response.redirect().toRoute('home')
+  }
 }
