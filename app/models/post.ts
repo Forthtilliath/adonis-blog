@@ -18,7 +18,7 @@ export default class Post extends BaseModel {
   declare thumbnail: string
 
   @column()
-  declare userId: number
+  declare userId: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
