@@ -4,6 +4,9 @@ import { storePostValidator } from '#validators/post'
 import { inject } from '@adonisjs/core'
 import stringHelpers from '@adonisjs/core/helpers/string'
 import type { HttpContext } from '@adonisjs/core/http'
+import { Marked } from 'marked'
+import { markedHighlight, markedHighlihter } from 'marked-highlight'
+import hljs from 'highlight.js'
 
 @inject()
 export default class PostController {
@@ -47,7 +50,25 @@ export default class PostController {
   /**
    * Show individual record
    */
-  async show({ params }: HttpContext) {}
+  async show({ params: { slug, id }, response, view }: HttpContext) {
+    const post = await Post.findByOrFail('id', id)
+    if (post.slug !== slug) {
+      return response.redirect().toRoute('post.show', { slug: post.slug, id })
+    }
+
+    const marked = new Marked(
+      markedHighlight({
+        langPrefix: 'hljs language-',
+        highlight(code, lang, info) {
+          const language = hljs.getLanguage(lang) ? lang : 'plaintext'
+          return hljs.highlight(code, { language }).value
+        },
+      })
+    )
+    const content = marked.parse(post.content)
+
+    return view.render('pages/post/show', { title: post.title, content })
+  }
 
   /**
    * Edit individual record

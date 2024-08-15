@@ -53,6 +53,12 @@ router
       .group(() => {
         router.get('/create', [PostController, 'create']).as('post.create')
         router.post('/create', [PostController, 'store'])
+
+        router
+          .get('/:slug/:id', [PostController, 'show'])
+          .as('post.show')
+          .where('id', router.matchers.uuid())
+          .where('slug', router.matchers.slug())
       })
       .prefix('/post')
   })
