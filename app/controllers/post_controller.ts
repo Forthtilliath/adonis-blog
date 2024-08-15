@@ -8,6 +8,7 @@ import { Marked } from 'marked'
 import { markedHighlight } from 'marked-highlight'
 import hljs from 'highlight.js'
 import { unlink } from 'node:fs/promises'
+import PostPolicy from '#policies/post_policy'
 
 @inject()
 export default class PostController {
@@ -74,17 +75,27 @@ export default class PostController {
   /**
    * Edit individual record
    */
-  async edit({ params: { id }, view }: HttpContext) {
+  async edit({ params: { id }, view, bouncer, session, response }: HttpContext) {
     const post = await Post.findOrFail(id)
+    if (await bouncer.with(PostPolicy).denies('alterPost', post)) {
+      session.flash('error', "Vous n'avez pas la permission de modifier cet article")
+      return response.redirect().back()
+    }
     return view.render('pages/post/edit', { post })
   }
 
   /**
    * Handle form submission for the edit action
    */
-  async update({ params: { id }, request, session, response }: HttpContext) {
+  async update({ params: { id }, bouncer, request, session, response }: HttpContext) {
     const { title, content, thumbnail } = await request.validateUsing(updatePostValidator)
     const post = await Post.findOrFail(id)
+
+    if (await bouncer.with(PostPolicy).denies('alterPost', post)) {
+      session.flash('error', "Vous n'avez pas la permission de modifier cet article")
+      return response.redirect().back()
+    }
+
     if (post.title !== title) {
       post.merge({ title, slug: stringHelpers.slug(title, { lower: true }) })
     }
@@ -105,8 +116,14 @@ export default class PostController {
   /**
    * Delete record
    */
-  async destroy({ params: { id }, session, response }: HttpContext) {
+  async destroy({ params: { id }, bouncer, session, response }: HttpContext) {
     const post = await Post.findOrFail(id)
+
+    if (await bouncer.with(PostPolicy).denies('alterPost', post)) {
+      session.flash('error', "Vous n'avez pas la permission de modifier cet article")
+      return response.redirect().back()
+    }
+
     await unlink(`public/${post.thumbnail}`)
     await post.delete()
 

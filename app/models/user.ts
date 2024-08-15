@@ -27,6 +27,9 @@ export default class User extends compose(BaseModel, AuthFinder) {
   @column()
   declare thumbnail: string
 
+  @column()
+  declare role: 'user' | 'admin'
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
