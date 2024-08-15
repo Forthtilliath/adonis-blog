@@ -71,7 +71,7 @@
     "marked": "^14.0.0",
     "marked-highlight": "^2.1.4",
     "reflect-metadata": "^0.2.2",
-    "simplemde": "^1.11.2"
+    "unpoly": "^3.8.0"
   },
   "hotHook": {
     "boundaries": [

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title || 'Mon blog'}}</title>
 
+  <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+  <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-  
-@include('partials/nav')
-@include('partials/flash')
+
+<body class="d-flex flex-column">
+
+  @include('partials/nav')
+  @include('partials/flash')
+
+  <main class="main flex-grow-1">

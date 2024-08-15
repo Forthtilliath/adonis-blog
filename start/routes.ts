@@ -30,7 +30,7 @@ router
     router.post('/register', [AuthController, 'handleRegister'])
 
     router.get('/login', [AuthController, 'login']).as('auth.login')
-    router.post('/login', [AuthController, 'handleLogin'])
+    router.post('/login', [AuthController, 'handleLogin']).as('auth.handle-login')
 
     router
       .get('/forgot-password', [ResetPasswordController, 'forgotPassword'])

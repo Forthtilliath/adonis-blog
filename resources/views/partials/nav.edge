@@ -6,14 +6,14 @@
 
     <div>
       @if(!auth.use('web').isAuthenticated)
-        <a href="{{route('auth.register')}}" class="btn btn-outline-info">Inscription</a>
-        <a href="{{route('auth.login')}}" class="btn btn-outline-info">Connexion</a>
+        <a href="{{route('auth.register')}}" class="btn btn-outline-info" up-target=".main">Inscription</a>
+        <a href="{{route('auth.login')}}" class="btn btn-outline-info" up-target=".main">Connexion</a>
       @end
 
       @if(auth.use('web').isAuthenticated)
         <div class="d-flex gap-3 align-items-center">
           @!userBadge({ username: auth.use('web').user.username, thumbnail: auth.use('web').user.thumbnail})
-        <a href="{{route('post.create')}}" class="btn btn-outline-info">Publier ?</a>
+        <a href="{{route('post.create')}}" class="btn btn-outline-info" up-layer="new" up-mode="drawer" up-size="full">Publier ?</a>
           <form action="{{route('auth.logout')}}?_method=DELETE" method="post">
             {{csrfField()}}
             <button class="btn btn-outline-warning" type="submit">Déconnexion</button>
