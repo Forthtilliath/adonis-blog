@@ -1,9 +1,8 @@
 import { DateTime } from 'luxon'
 import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
 import hash from '@adonisjs/core/services/hash'
-import { compose, cuid } from '@adonisjs/core/helpers'
+import { compose } from '@adonisjs/core/helpers'
 import { BaseModel, beforeCreate, column } from '@adonisjs/lucid/orm'
-import { randomUUID } from 'node:crypto'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
