@@ -9,12 +9,13 @@
 
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
+
 const PostController = () => import('#controllers/post_controller')
 const ResetPasswordController = () => import('#controllers/reset_password_controller')
 const SocialController = () => import('#controllers/social_controller')
 const AuthController = () => import('#controllers/auth_controller')
 
-router.on('/').render('pages/home').as('home')
+router.get('/', [PostController, 'index']).as('home')
 
 // Routes for guests
 router
