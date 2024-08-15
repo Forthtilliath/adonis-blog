@@ -40,7 +40,7 @@ export default class SocialController {
       await auth.use('web').login(user)
     }
 
-    session.flash('success', 'Connecté avec guthub !')
+    session.flash('success', 'Connecté avec github !')
     return response.redirect().toRoute('home')
   }
 }

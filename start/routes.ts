@@ -51,6 +51,7 @@ router
     router
       .group(() => {
         router.get('/create', [PostController, 'create']).as('post.create')
+        router.post('/create', [PostController, 'store'])
       })
       .prefix('/post')
   })
