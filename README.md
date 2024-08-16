@@ -9,7 +9,7 @@
 
 ### Motivations Initiales
 
-- **Curiosité Technologique** : Ce projet naît d'un désir intense de plonger dans le monde d'AdonisJS, et plus précisément de sa version 6, après avoir été captivé par une vidéo de présentation. Cette expérience m'a inspiré à explorer activement AdonisJS, et je recommande vivement cette vidéo à ceux qui souhaitent s'initier à Adonis : [Vidéo de Présentation](https://www.youtube.com/watch?v=eLNg9yelCqw).
+Ce projet naît d'un désir intense de plonger dans le monde d'AdonisJS, et plus précisément de sa version 6, après avoir été captivé par une vidéo de présentation. Cette expérience m'a inspiré à explorer activement AdonisJS, et je recommande vivement cette vidéo à ceux qui souhaitent s'initier à Adonis : [Vidéo de Présentation](https://www.youtube.com/watch?v=eLNg9yelCqw).
 
 ### Description
 
