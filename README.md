@@ -1,95 +1,95 @@
 # Adonis Blog
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) ![TypeScript](https://img.shields.io/badge/-TypeScript-blue?logo=typescript&logoColor=white)
+![License](https://img.shields.io/github/license/forthtilliath/adonis-blog?style=for-the-badge) [![AdonisJS 6.12](https://img.shields.io/badge/AdonisJS-6.12-blue?style=for-the-badge&logo=adonisjs)](https://adonisjs.com/) ![Prisma](https://img.shields.io/badge/Prisma-47848D?style=for-the-badge&logo=prisma&logoColor=white) [![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-blue?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/) ![TypeScript](https://img.shields.io/badge/-TypeScript-blue?logo=typescript&logoColor=white&style=for-the-badge)
 
-
-[![AdonisJS 6.12](https://img.shields.io/badge/AdonisJS-6.12-blue?style=for-the-badge&logo=adonisjs)](https://adonisjs.com/) ![Prisma](https://img.shields.io/badge/Prisma-47848D?style=for-the-badge&logo=prisma&logoColor=white) [![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-blue?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/) 
+Version française : [🇫🇷](README.fr.md)
 
 ## Introduction
 
-### Motivations Initiales
+### Initial Motivations
 
-Ce projet naît d'un désir intense de plonger dans le monde d'AdonisJS, et plus précisément de sa version 6, après avoir été captivé par une vidéo de présentation. Cette expérience m'a inspiré à explorer activement AdonisJS, et je recommande vivement cette vidéo à ceux qui souhaitent s'initier à Adonis : [Vidéo de Présentation](https://www.youtube.com/watch?v=eLNg9yelCqw).
+This project stems from an intense desire to delve into the world of AdonisJS, specifically version 6, after being captivated by a presentation video. This experience inspired me to actively explore AdonisJS, and I highly recommend this video to those wishing to get started with Adonis: [Presentation Video](https://www.youtube.com/watch?v=eLNg9yelCqw).
 
 ### Description
 
-Ce projet vise à développer un blog complet, en utilisant AdonisJS pour gérer à la fois le frontend et le backend. Parmi les fonctionnalités clés, figurent :
+This project aims to develop a comprehensive blog, using AdonisJS to manage both the frontend and backend. Among the key features are:
 
-**Système d'Authentification** : Un système robuste d'authentification, permettant aux utilisateurs de se connecter de manière sécurisée à leur compte. La fonctionnalité de réinitialisation de mot de passe est également disponible, facilitant le processus de récupération d'accès pour les utilisateurs oubliant leurs identifiants.
+**Authentication System** : A robust authentication system allowing users to securely log in to their account. Password reset functionality is also available, simplifying the access recovery process for users who forget their credentials.
 
-**Connexion via Github** : Une option unique de connexion en utilisant un compte Github, simplifiant l'inscription et la connexion pour les utilisateurs déjà présents sur cette plateforme.
+**GitHub Login** : A unique login option using a GitHub account, simplifying registration and login for users already present on this platform.
 
-**Utilisation de Composants Clés d'AdonisJS** : Le projet exploite pleinement les capacités d'AdonisJS, incluant l'utilisation de ``controllers``, ``middleware``, ``models``, ``policies``, ``services`` et ``validators``. Ces composants permettent une structure organisée et efficace du code, facilitant la maintenance et l'évolution future du projet.
+**Use of Key AdonisJS Components** : The project fully leverages AdonisJS capabilities, including the use of ``controllers``, ``middleware``, ``models``, ``policies``, ``services``, and ``validators``. These components allow for an organized and efficient code structure, facilitating maintenance and future evolution of the project.
 
-### Source d'Inspiration
+### Inspiration Source
 
-Ce projet trouve son origine dans une playlist intitulée "[Adonis V6](https://www.youtube.com/playlist?list=PL_fWONAepR_D41KnEFMtqnhogOceHvUIh)", créée par [Houssam](https://www.youtube.com/@HoussamCode), un passionné de développement web. Cette série de vidéos a suscité chez moi une véritable curiosité technologique, m'incitant à expérimenter et à approfondir mes connaissances en AdonisJS, particulièrement la version 6.
+This project originates from a playlist titled "[Adonis V6](https://www.youtube.com/playlist?list=PL_fWONAepR_D41KnEFMtqnhogOceHvUIh)", created by [Houssam](https://www.youtube.com/@HoussamCode), a web development enthusiast. This series of videos sparked a genuine technological curiosity in me, prompting me to experiment and deepen my knowledge in AdonisJS, particularly version 6.
 
-## Table des Matières
+## Table of Contents
 
 - [Adonis Blog](#adonis-blog)
   - [Introduction](#introduction)
-    - [Motivations Initiales](#motivations-initiales)
+    - [Initial Motivations](#initial-motivations)
     - [Description](#description)
-    - [Source d'Inspiration](#source-dinspiration)
-  - [Table des Matières](#table-des-matières)
-  - [Les principales librairies](#les-principales-librairies)
+    - [Inspiration Source](#inspiration-source)
+  - [Table of Contents](#table-of-contents)
+  - [Main Libraries](#main-libraries)
   - [Installation](#installation)
-  - [Compétences Acquises](#compétences-acquises)
+  - [Skills Acquired](#skills-acquired)
 
-## Les principales librairies
+## Main Libraries
 
-Ce projet repose sur plusieurs dépendances essentielles pour son bon fonctionnement :
+This project relies on several essential dependencies for its proper functioning:
 
-**AdonisJS** : Le framework principal utilisé pour le développement du backend et du frontend du projet. Inclut également toutes les librairies connexes telles que Vine pour la validation des données des formulaires.
+**AdonisJS** : The main framework used for developing both the backend and frontend of the project. It also includes all connected libraries such as Vine for form data validation.
 
-**Bootstrap** : Bibliothèque CSS pour le design responsive et mobile-first du frontend.
+**Bootstrap** : A CSS library for responsive and mobile-first frontend design.
 
-**Marked et Highlight.js** : Utilisés pour la mise en forme et la coloration syntaxique du contenu texte, rendant le blog attrayant et facile à lire.
+**Marked and Highlight.js** : Used for formatting and syntax highlighting of textual content, making the blog attractive and easy to read.
 
-**Unpoly** : Une petite bibliothèque JavaScript pour rendre les pages web interactives sans recourir à AJAX ou jQuery.
-  
-**TypeScript** : Langage de programmation typé qui améliore la maintenabilité et la productivité du code source.
+**Unpoly** : A small JavaScript library for making web pages interactive without resorting to AJAX or jQuery.
+
+**TypeScript** : A typed programming language that improves code maintainability and productivity.
 
 ## Installation
 
-Pour installer et exécuter ce projet localement:
+To install and run this project locally:
 
-1. Clonez le dépôt:
+1. Clone the repository:
 ```bash
 git clone https://github.com/Forthtilliath/adonis-blog.git
 ```
 
-2. Accédez au dossier du projet:
+2. Navigate to the project directory:
 ```bash
 cd adonis-blog
 ```
 
-3. Installez les dépendances:
+3. Install dependencies:
 ```bash
 npm i
 ```
 
-4. Création de la base de données
+4. Database creation
 ```bash
 node ace migration:run
 ```
 
-5. Démarrez le projet:
+5. Start the project:
 ```bash
 npm run dev
 ```
 
-## Compétences Acquises
 
-La réalisation de ce projet a constitué ma première immersion dans le monde d'AdonisJS. Malgré l'absence d'une approfondissement préalable, j'ai pu :
+## Skills Acquired
 
-**Initier un projet avec AdonisJS** : J'ai pris en main mon premier projet avec AdonisJS, ce qui m'a permis de comprendre les bases de son installation et configuration.
+Completing this project constituted my first immersion in the world of AdonisJS. Despite the absence of prior deepening, I was able to:
 
-**Explorer les commandes de base** : J'ai familiarisé avec les commandes essentielles d'AdonisJS, telles que la création de modèles, de contrôleurs, et la gestion des migrations, pour structurer mon projet.
+**Start a project with AdonisJS** : Taking on my first project with AdonisJS allowed me to understand the basics of its setup and configuration.
 
-**Comprendre la structure d'un projet AdonisJS** : En naviguant à travers les dossiers et fichiers typiques d'un projet AdonisJS, j'ai commencé à saisir l'organisation et la logique derrière la structure du framework.
+**Explore Basic Commands** : Familiarizing myself with the essential commands of AdonisJS, such as creating models, controllers, and managing migrations, to structure my project.
 
-**Développer une application web de bout en bout**: J'ai pu appliquer mes connaissances pour développer un blog, en intégrant des fonctionnalités telles que l'authentification et la gestion de contenu, ce qui a renforcé ma capacité à résoudre des problèmes pratiques.
+**Understand the Structure of an AdonisJS Project** : Navigating through typical folders and files of an AdonisJS project began to grasp the organization and logic behind the framework's structure.
 
-Ces premières expériences avec AdonisJS ont été cruciales pour démarrer mon apprentissage et m'ont préparé à explorer davantage les capacités et les best practices du framework.
+**Develop a Full-Stack Web Application**: I was able to apply my knowledge to develop a blog, integrating features such as authentication and content management, strengthening my ability to solve practical problems.
+
+These first experiences with AdonisJS were crucial for starting my learning and preparing me to further explore the capacities and best practices of the framework.
