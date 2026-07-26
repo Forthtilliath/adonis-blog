@@ -194,12 +194,19 @@ h5,
 }
 
 /* Pagination */
+.pagination {
+	gap: 0.6rem;
+}
+
 .pagination .page-link {
 	color: var(--meeplog-ink);
-	border-radius: 999px;
-	margin-inline: 0.15rem;
+	border-radius: 0.6rem;
 	border: none;
 	background-color: var(--meeplog-cream-dark);
+	padding: 0.55rem 1rem;
+	min-width: 2.75rem;
+	text-align: center;
+	font-weight: 600;
 }
 
 .pagination .page-link:hover {
