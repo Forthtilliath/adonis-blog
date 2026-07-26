@@ -5,14 +5,14 @@
 <div class="container">
   <h1 class="text-center my-2">{{title}}</h1>
 
-  <div class="d-flex justify-content-between flex-wrap">
+  <div class="posts-grid">
     @each(post in posts)
-    <div class="card mt-2" style="width: 18rem;">
+    <div class="card h-100">
       <img src="{{post.thumbnail}}" class="card-img-top" alt="{{post.title}}">
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <h5 title="{{post.title}}" class="card-title">{{truncate(post.title, 20)}}</h5>
         <p class="card-text">Ecrit par : {{post.user.username}}</p>
-        <a href="{{route('post.show', { slug: post.slug, id: post.id })}}" class="btn btn-primary">Lire l'article</a>
+        <a href="{{route('post.show', { slug: post.slug, id: post.id })}}" class="btn btn-primary mt-auto">Lire l'article</a>
         @if(auth.use('web').isAuthenticated && (auth.use('web').user.role === 'admin' || auth.use('web').user.id === post.userId))
         <div class="d-flex mt-3 justify-content-between">
           <a href="{{route('post.edit', { id: post.id })}}" class="btn btn-outline-warning">Modifier l'article</a>
@@ -28,8 +28,8 @@
   </div>
 
   @if(posts.hasPages)
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
+  <nav aria-label="Page navigation example" class="mt-4">
+    <ul class="pagination justify-content-center">
       <li class="page-item {{posts.currentPage === posts.firstPage && 'disabled'}}">
         <a class="page-link" href="{{posts.getPreviousPageUrl()}}">Précédent</a>
       </li>

@@ -71,6 +71,26 @@ h5,
 	letter-spacing: 0.02em;
 }
 
+/* Posts grid: reliable 3x2 layout regardless of viewport width */
+.posts-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+	margin-block: 1.5rem;
+}
+
+@media (max-width: 992px) {
+	.posts-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 576px) {
+	.posts-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
 /* Cards (post previews, forms) */
 .card {
 	background-color: var(--meeplog-cream) !important;
@@ -182,9 +202,23 @@ h5,
 	background-color: var(--meeplog-cream-dark);
 }
 
+.pagination .page-link:hover {
+	background-color: var(--meeplog-gold);
+	color: var(--meeplog-ink);
+}
+
+.pagination .page-link:focus {
+	box-shadow: 0 0 0 0.2rem rgba(217, 164, 65, 0.5);
+}
+
 .pagination .page-item.active .page-link {
 	background-color: var(--meeplog-dice-red);
 	color: var(--meeplog-cream);
+}
+
+.pagination .page-item.disabled .page-link {
+	background-color: transparent;
+	color: rgba(250, 243, 226, 0.35);
 }
 
 /* Footer */
