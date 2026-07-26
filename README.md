@@ -6,6 +6,16 @@ Meeplog is a personal blog about board games — chronicles, session reports and
 
 Version française : [🇫🇷](README.fr.md)
 
+![Meeplog home page](docs/screenshot-home.png)
+
+<details>
+<summary>More screenshots</summary>
+
+![Article page](docs/screenshot-article.png)
+![Login page](docs/screenshot-login.png)
+
+</details>
+
 ## Introduction
 
 ### Initial Motivations

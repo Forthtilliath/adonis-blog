@@ -6,6 +6,16 @@ Meeplog est un blog perso sur les jeux de société — chroniques, retours de p
 
 English version : [🇬🇧](README.md)
 
+![Page d'accueil de Meeplog](docs/screenshot-home.png)
+
+<details>
+<summary>Plus de captures d'écran</summary>
+
+![Page d'un article](docs/screenshot-article.png)
+![Page de connexion](docs/screenshot-login.png)
+
+</details>
+
 ## Introduction
 
 ### Motivations Initiales
