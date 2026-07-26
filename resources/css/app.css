@@ -324,3 +324,39 @@ h5,
 	font-weight: 700;
 	text-decoration: underline;
 }
+
+/* Form inputs: make them stand out against the cream cards instead of blending in */
+.form-group {
+	margin-bottom: 1.1rem;
+}
+
+.form-group label {
+	display: block;
+	font-weight: 700;
+	color: var(--meeplog-wood-dark);
+	margin-bottom: 0.35rem;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+.form-control {
+	background-color: #fff !important;
+	border: 2px solid var(--meeplog-wood) !important;
+	border-radius: 0.5rem !important;
+	padding: 0.6rem 0.9rem !important;
+	color: var(--meeplog-ink) !important;
+}
+
+.form-control:focus {
+	border-color: var(--meeplog-dice-red) !important;
+	box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.25) !important;
+}
+
+.form-control::placeholder {
+	color: rgba(43, 36, 32, 0.4);
+}
+
+.form-control[type='file'] {
+	padding: 0.4rem 0.6rem !important;
+}
