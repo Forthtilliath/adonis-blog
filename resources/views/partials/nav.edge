@@ -1,8 +1,8 @@
 @eval(await auth.use('web').check())
 
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Mon blog</a>
+    <a class="navbar-brand" href="/"><span class="brand-dice" aria-hidden="true">🎲</span>Meeplog</a>
 
     <div>
       @if(!auth.use('web').isAuthenticated)

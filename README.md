@@ -1,6 +1,8 @@
-# Adonis Blog
+# Meeplog
 
-![License](https://img.shields.io/github/license/forthtilliath/adonis-blog?style=for-the-badge) [![AdonisJS 6.12](https://img.shields.io/badge/AdonisJS-6.12-blue?style=for-the-badge&logo=adonisjs)](https://adonisjs.com/) ![Prisma](https://img.shields.io/badge/Prisma-47848D?style=for-the-badge&logo=prisma&logoColor=white) [![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-blue?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/) ![TypeScript](https://img.shields.io/badge/-TypeScript-blue?logo=typescript&logoColor=white&style=for-the-badge)
+![License](https://img.shields.io/github/license/forthtilliath/meeplog?style=for-the-badge) [![AdonisJS 6.12](https://img.shields.io/badge/AdonisJS-6.12-blue?style=for-the-badge&logo=adonisjs)](https://adonisjs.com/) [![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-blue?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/) ![TypeScript](https://img.shields.io/badge/-TypeScript-blue?logo=typescript&logoColor=white&style=for-the-badge)
+
+Meeplog is a personal blog about board games — chronicles, session reports and favorite picks — built as a full-stack AdonisJS learning project.
 
 Version française : [🇫🇷](README.fr.md)
 
@@ -26,7 +28,7 @@ This project originates from a playlist titled "[Adonis V6](https://www.youtube.
 
 ## Table of Contents
 
-- [Adonis Blog](#adonis-blog)
+- [Meeplog](#meeplog)
   - [Introduction](#introduction)
     - [Initial Motivations](#initial-motivations)
     - [Description](#description)
@@ -56,12 +58,12 @@ To install and run this project locally:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Forthtilliath/adonis-blog.git
+git clone https://github.com/Forthtilliath/meeplog.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd adonis-blog
+cd meeplog
 ```
 
 3. Install dependencies:
