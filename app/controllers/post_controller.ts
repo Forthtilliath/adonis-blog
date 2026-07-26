@@ -18,7 +18,7 @@ export default class PostController {
    */
   async index({ view, request }: HttpContext) {
     const page = request.input('page', 1)
-    const limit = 12
+    const limit = 6
     const posts = await Post.query()
       .select('id', 'title', 'thumbnail', 'slug', 'user_id')
       .preload('user', (u) => u.select('username'))
