@@ -1,10 +1,217 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
+}
+
+:root {
+	--meeplog-felt: #1b3a2f;
+	--meeplog-felt-dark: #12271f;
+	--meeplog-wood: #6b4226;
+	--meeplog-wood-dark: #4a2d18;
+	--meeplog-cream: #faf3e2;
+	--meeplog-cream-dark: #ede1c8;
+	--meeplog-ink: #2b2420;
+	--meeplog-dice-red: #c0392b;
+	--meeplog-dice-red-dark: #9c2d20;
+	--meeplog-gold: #d9a441;
+	--meeplog-gold-ink: #8a5a12;
+}
+
+body {
+	background-color: var(--meeplog-felt) !important;
+	background-image:
+		radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03) 0, transparent 40%),
+		radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.03) 0, transparent 40%);
+	color: var(--meeplog-cream) !important;
+	font-family: 'Nunito', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navbar-brand {
+	font-family: 'Fredoka', 'Nunito', system-ui, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+	background-color: var(--meeplog-wood-dark) !important;
+	border-bottom: 4px solid var(--meeplog-gold);
+	padding-block: 0.75rem;
+}
+
+.navbar-brand {
+	color: var(--meeplog-cream) !important;
+	font-size: 1.5rem;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.brand-dice {
+	font-size: 1.6rem;
+	transform: rotate(-8deg);
+	display: inline-block;
+}
+
+/* Page title */
+.main h1 {
+	color: var(--meeplog-cream);
+	font-weight: 600;
+	letter-spacing: 0.02em;
+}
+
+/* Cards (post previews, forms) */
+.card {
+	background-color: var(--meeplog-cream) !important;
+	color: var(--meeplog-ink) !important;
+	border: none !important;
+	border-radius: 0.75rem !important;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+	transition: transform 0.15s ease;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+}
+
+.card-img-top {
+	border-radius: 0.75rem 0.75rem 0 0 !important;
+	background-color: var(--meeplog-cream-dark);
+}
+
+.bg-light {
+	background-color: var(--meeplog-cream) !important;
+	color: var(--meeplog-ink) !important;
+	border-radius: 0.75rem;
+}
+
+/* Buttons */
+.btn-primary {
+	background-color: var(--meeplog-dice-red) !important;
+	border-color: var(--meeplog-dice-red) !important;
+	border-radius: 999px;
+	font-weight: 600;
+}
+
+.btn-primary:hover {
+	background-color: var(--meeplog-dice-red-dark) !important;
+	border-color: var(--meeplog-dice-red-dark) !important;
+}
+
+/* On dark surfaces (navbar, felt body): gold has enough contrast. */
+.btn-outline-info {
+	color: var(--meeplog-gold) !important;
+	border-color: var(--meeplog-gold) !important;
+	border-radius: 999px;
+	font-weight: 600;
+}
+
+.btn-outline-info:hover {
+	background-color: var(--meeplog-gold) !important;
+	color: var(--meeplog-ink) !important;
+}
+
+/* On light surfaces (cards, forms): gold text fails contrast, use the darker ink variant instead. */
+.bg-light .btn-outline-info,
+.card .btn-outline-info {
+	color: var(--meeplog-gold-ink) !important;
+	border-color: var(--meeplog-gold-ink) !important;
+}
+
+.bg-light .btn-outline-info:hover,
+.card .btn-outline-info:hover {
+	background-color: var(--meeplog-gold-ink) !important;
+	color: var(--meeplog-cream) !important;
+}
+
+/* Default (dark surfaces, e.g. navbar "Déconnexion"): gold has enough contrast. */
+.btn-outline-warning {
+	color: var(--meeplog-gold) !important;
+	border-color: var(--meeplog-gold) !important;
+	border-radius: 999px;
+	font-weight: 600;
+}
+
+.btn-outline-warning:hover {
+	background-color: var(--meeplog-gold) !important;
+	color: var(--meeplog-ink) !important;
+}
+
+/* On light surfaces (cards): gold text fails contrast, use the darker ink variant instead. */
+.bg-light .btn-outline-warning,
+.card .btn-outline-warning {
+	color: var(--meeplog-gold-ink) !important;
+	border-color: var(--meeplog-gold-ink) !important;
+}
+
+.bg-light .btn-outline-warning:hover,
+.card .btn-outline-warning:hover {
+	background-color: var(--meeplog-gold-ink) !important;
+	color: var(--meeplog-cream) !important;
+}
+
+.btn-outline-danger {
+	color: var(--meeplog-dice-red-dark) !important;
+	border-color: var(--meeplog-dice-red-dark) !important;
+	border-radius: 999px;
+	font-weight: 600;
+}
+
+.btn-outline-danger:hover {
+	background-color: var(--meeplog-dice-red-dark) !important;
+	color: var(--meeplog-cream) !important;
+}
+
+/* Pagination */
+.pagination .page-link {
+	color: var(--meeplog-ink);
+	border-radius: 999px;
+	margin-inline: 0.15rem;
+	border: none;
+	background-color: var(--meeplog-cream-dark);
+}
+
+.pagination .page-item.active .page-link {
+	background-color: var(--meeplog-dice-red);
+	color: var(--meeplog-cream);
+}
+
+/* Footer */
+.footer {
+	background-color: var(--meeplog-wood-dark) !important;
+	color: var(--meeplog-cream-dark);
+	border-top: 4px solid var(--meeplog-gold);
+}
+
+.footer h5 {
+	color: var(--meeplog-gold);
+}
+
+.footer a.text-muted,
+.footer address.text-muted,
+.footer p.text-muted {
+	color: var(--meeplog-cream-dark) !important;
+}
+
+.footer hr {
+	border-color: rgba(250, 243, 226, 0.2);
+	opacity: 1;
+}
+
+/* Article content */
+.container.bg-light h1,
+.container.bg-light h2,
+.container.bg-light h3 {
+	color: var(--meeplog-wood-dark);
 }
